@@ -1,5 +1,6 @@
 package com.example.basicedu.html;
 
+import com.example.basicedu.html.dto.Html03Dto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -21,4 +22,17 @@ public class HtmlController {
 
         return "";
     }
+
+
+    @PostMapping("/html/html03")
+    public String html03Proc(Html03Dto html03Dto) {
+        System.out.printf("html03 메인 페이지 진입 ");
+
+        System.out.printf(html03Dto.getTitle());
+        System.out.printf(html03Dto.getContent());
+        System.out.printf("-----------------------------");
+
+        return "";
+    }
+
 }
