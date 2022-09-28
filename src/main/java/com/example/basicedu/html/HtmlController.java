@@ -4,6 +4,7 @@ import com.example.basicedu.html.dto.Html03Dto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,11 +41,28 @@ public class HtmlController {
         return "";
     }
 
+    @GetMapping("/html/html04")
+    public String html04Form() {
+
+        return "html/html04";
+    }
+
 
     @PostMapping("/html/html04")
     public String html04Proc(Html03Dto html03Dto) {
 
-        return htmlService.html04(html03Dto);
+        htmlService.html04(html03Dto);
+
+        return "redirect:/html/html04";
+    }
+
+
+    @GetMapping("/html04")
+    public String html04() {
+
+        System.out.printf("html04 진입");
+
+        return "html04_detail.html";
     }
 
 }

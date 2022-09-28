@@ -11,10 +11,11 @@ public class HtmlService {
 
     private final HtmlRepository htmlRepository;
 
-    public String html04(Html03Dto html03Dto) {
+    public void html04(Html03Dto html03Dto) {
 
 //        html 객체 담기
-        Html html = html.builder()
+
+        Html html = Html.builder()
                 .title(html03Dto.getTitle())
                 .content(html03Dto.getContent())
                 .build();
@@ -22,8 +23,6 @@ public class HtmlService {
 //       html 저장하기
         htmlRepository.save(html);
 
-
-        return null;
     }
 
 
