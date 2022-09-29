@@ -1,14 +1,17 @@
 package com.example.basicedu.html;
 
 import com.example.basicedu.html.dto.Html03Dto;
+import com.example.basicedu.html.entity.Html;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -63,6 +66,18 @@ public class HtmlController {
         System.out.printf("html04 진입");
 
         return "html04_detail.html";
+    }
+
+
+    @GetMapping("/html/html04List")
+    public String html04List(Model model) {
+        System.out.printf("리스트 화면 출력 ");
+
+        List<Html> htmlList = htmlService.searchFindAll();
+
+        model.addAttribute("lists" ,htmlList);
+
+        return "html/html04_list";
     }
 
 }

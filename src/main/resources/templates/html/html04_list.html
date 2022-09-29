@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery CDN</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+</head>
+<body>
+  jQuery CDN
+
+<table>
+    <tr>
+        <td>
+            번호
+        </td>
+        <td>
+            제목
+        </td>
+        <td>
+            내용
+        </td>
+    </tr>
+    <tr th:each="list, idx : ${lists}">
+        <td th:text="${list.id}">
+            111
+        </td>
+        <td>
+           <p th:text="${list.title}"></p>
+        </td>
+        <td>
+            <p th:text="${list.content}"></p>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+
+<script>
+    $(document).ready(function (){
+
+
+
+    });
+
+</script>
+
+</html>

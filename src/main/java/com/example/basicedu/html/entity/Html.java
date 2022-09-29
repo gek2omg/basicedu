@@ -4,6 +4,8 @@ import lombok.*;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,5 +23,9 @@ public class Html {
     private String title;
 
     private String content;
+
+    @OneToMany(mappedBy = "html")
+    @Column(nullable = true)
+    private List<HtmlOption> htmlOptions = new ArrayList<>();
 
 }
